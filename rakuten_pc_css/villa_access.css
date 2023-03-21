@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+
+
+.main_wrapper {
+  padding: 50px 0 120px 0;
+}
+
+.main_wrapper.access {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.villa_map {
+  width: 100%;
+}
+
+.villa_map iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.villa_map_address {
+  background: #e5f0f3;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0 100px;
+}
+
+.villa_map_address dd {
+  margin-left: 20px;
+}
+
+.villa_map_address address {
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 1.733;
+  width: 315px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.access_howto {
+  margin-top: 80px;
+  padding: 0 50px;
+}
+
+.howto_title {
+  font-size: 2.4rem;
+  color: #006888;
+}
+
+.howto_box {
+  margin-top: 32px;
+}
+
+.howto_list h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #006888;
+}
+
+.howto_list h3 img {
+  margin-right: 10px;
+}
+
+.howto_list li p:first-of-type {
+  padding-top: 20px;
+  border-top: 1px solid #DADADA;
+  margin-top: 16px;
+}
+
+.howto_list>li:nth-of-type(n+2) {
+  margin-top: 40px;
+}
+
+.access_howto ul:nth-of-type(2) {
+  margin-top: 80px;
+}
+
+.howto_list_head_text {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.howto_other_text {
+  margin-top: 40px;
+  font-size: 1.5rem;
+}
+
+.howto_list li ul {
+  margin-top: 25px;
+}
+
+.howto_list h4 {
+  color: #006888;
+  line-height: 2;
+}
+
+.howto_list li ul li:nth-of-type(n+2) h4 {
+  margin-top: 20px;
+}
+
+.howto_list p {
+  font-size: 1.5rem;
+}

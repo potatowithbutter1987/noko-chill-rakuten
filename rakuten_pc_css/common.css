@@ -1,0 +1,743 @@
+@charset "UTF-8";
+/*$monoLight: #fff;
+$monoDark: #717171;*/
+/*$mainColorDark: #386dac;*/
+/*$subColorDark: #238068;
+$subColorLight: #d8faf7;*/
+/*$muteColorDark: #bababa;
+$muteColorLight: #ebe8e8;
+$muteColorBg: #fafafa;*/
+/*$attentionColor: #ffd23e;
+$infoColor: #98c14b;
+$infoColorLight: #f9ffed;*/
+/*@mixin hover($opacity: 0.7) {
+  @include transition(opacity);
+  opacity: 1;
+
+  &:hover {
+    @include transition(opacity);
+    opacity: $opacity;
+
+    @include sp {
+      opacity: 1;
+    }
+  }
+}*/
+html {
+  font-size: 62.5%;
+  height: 100%;
+  /*スムーススクロール対応*/
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 90px;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 475px) {
+  html {
+    scroll-padding-top: 55px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: auto;
+  }
+}
+body {
+  font-family: "Noto Serif JP", serif;/*新規*/
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.6;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  word-break: break-all;
+  font-weight: 400;/*新規*/
+}
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+/*============================
+汎用スタイル
+============================*/
+a,
+input[type=submit],
+.btn,
+button {
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  opacity: 1;
+}
+@media (hover: hover) {
+  a:hover,
+input[type=submit]:hover,
+.btn:hover,
+button:hover {
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.inline_block {
+  display: inline-block !important;
+}
+
+@media screen and (max-width: 768px) {
+  .pc_hide {
+    display: block;
+  }
+}
+
+/* ボタン */
+.btn_green {
+  color: #fff;
+  background-color: #006888;
+}
+
+.btn_white {
+  color: #006888;
+  background-color: #fff;
+}
+
+.btn_disable {
+  color: #fff;
+  background-color: #bbb;
+  pointer-events: none;
+}
+
+.btn_normal {
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.btn_lg {
+  width: 240px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+/*============================
+共通 ボタン Learge
+============================*/
+.learge-btn {
+  text-align: center;
+  padding: 30px 0;
+}
+.learge-btn_area {
+  width: 100%;
+  max-width: 300px;
+  height: 60px;
+  background-color: #006888;
+  border-radius: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 475px) {
+  .learge-btn_area {
+    height: 60px;
+  }
+}
+.learge-btn_area a {
+  font-size: min(3vw, 20px);
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 475px) {
+  .learge-btn_area a {
+    font-size: min(4vw, 24px);
+  }
+}
+.learge-btn_area a span {
+  position: relative;
+}
+.learge-btn_area a span:after {
+  content: url(../img/fes/arrow_right_w.png);
+  display: inline-block;
+  width: 37px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: -50px;
+}
+
+/* フォント */
+.title {
+  color: #006888;
+}
+
+.title .string,
+.title.string {
+  font-family: "Kiwi Maru", serif;
+  letter-spacing: -0.1em;
+}
+
+/* 縦のスクロール線 */
+.scrolldown {
+  position: relative;
+  height: 60px;
+  margin: 30px 0 50px;
+}
+@media screen and (max-width: 475px) {
+  .scrolldown {
+    height: 40px;
+    margin: 15px 0 30px;
+  }
+}
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background: #006888;
+}
+@media screen and (max-width: 475px) {
+  .scrolldown::after {
+    width: 1px;
+    height: 40px;
+  }
+}
+
+/*============================
+汎用レイアウト・汎用パーツ
+============================*/
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  background-color: #fff;
+}
+
+/*============================
+header
+============================*/
+header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 calc((100% - 1220px) / 2);
+  height: 90px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+@media screen and (max-width: 1000px) {
+  header {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 680px) {
+  header {
+    height: 55px;
+    padding: 10px;
+  }
+}
+header .logo {
+  width: 220px;
+}
+@media screen and (max-width: 680px) {
+  header .logo {
+    max-width: 140px;
+    flex-shrink: 2;
+  }
+}
+
+.header_menu {
+  display: flex;
+  align-items: center;
+}
+.header_menu .gnav {
+  display: flex;
+  column-gap: 20px;
+  color: #bbb; /* リンク先がない間の対応 */
+  line-height: 2;
+}
+@media screen and (max-width: 1000px) {
+  .header_menu .gnav {
+    display: none;
+  }
+}
+.header_menu .gnav a {
+  color: #006888;
+  border-bottom: 2px solid #fff;
+}
+.header_menu .gnav a:hover {
+  opacity: 1;
+  border-bottom: 2px solid #006888;
+}
+.header_menu .btn_group {
+  margin-left: 20px;
+}
+@media screen and (max-width: 680px) {
+  .header_menu .btn_group {
+    margin-left: auto;
+  }
+}
+.header_menu .btn_group a {
+  font-size: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+@media screen and (max-width: 680px) {
+  .header_menu .btn_group a {
+    font-size: 1.15rem;
+    width: 70px;
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 5px;
+  }
+}
+.header_menu .sp_menu,
+.header_menu .sp_menu_btn {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .header_menu .sp_menu {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    padding: 90px 30px 0;
+    border-top: 1px solid #ccc;
+  }
+}
+@media screen and (max-width: 680px) {
+  .header_menu .sp_menu {
+    top: 55px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header_menu .sp_menu .btn_group {
+    text-align: center;
+    margin: 0;
+  }
+}
+.header_menu .sp_menu .btn_group a {
+  font-size: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 10px);
+  height: 50px;
+  max-width: 250px;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  margin: initial;
+}
+.header_menu .sp_menu .btn_group a:first-child {
+  margin-right: 5px;
+}
+.header_menu .sp_menu .sns {
+  margin-top: 30px;
+  display: flex;
+}
+.header_menu .sp_menu .sns li {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.header_menu .sp_menu .sns li:last-child {
+  margin-right: 0;
+}
+.header_menu .sp_menu .sns_img {
+  width: 40px;
+}
+@media screen and (max-width: 680px) {
+  .header_menu .sp_menu_btn {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header_menu .sp_gnav {
+    font-family: "Kiwi Maru", serif;
+    margin-bottom: 50px;
+  }
+  .header_menu .sp_gnav li {
+    border-top: 1px solid #ccc;
+    position: relative;
+    height: 60px; /* リンク先がない間の対応 */
+    color: #bbb; /* リンク先がない間の対応 */
+    display: flex; /* リンク先がない間の対応 */
+    align-items: center; /* リンク先がない間の対応 */
+  }
+  .header_menu .sp_gnav li:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  .header_menu .sp_gnav li::after {
+    content: url(../img/arrow.png);
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50);
+    right: 0;
+  }
+  .header_menu .sp_gnav a {
+    color: #006888;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .header_menu .sp_gnav .btn_group {
+    margin: 0;
+  }
+  .header_menu .sp_gnav .sp_menu_btn {
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background: #fff;
+    padding-left: 10px;
+    margin-left: 10px;
+    /* is_activeクラスが付与されると線が回転して×に */
+  }
+  .header_menu .sp_gnav .sp_menu_btn .btn_group {
+    text-align: center;
+  }
+  .header_menu .sp_gnav .sp_menu_btn a {
+    width: calc(50% - 20px);
+    height: 50px;
+    max-width: 150px;
+    font-size: 1.5rem;
+    margin: 5px;
+    border-radius: 30px;
+  }
+  .header_menu .sp_gnav .sp_menu_btn .line {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 10px;
+    width: 35px;
+    height: 2px;
+    background-color: #006888;
+  }
+  .header_menu .sp_gnav .sp_menu_btn span:nth-of-type(1) {
+    top: 11px;
+  }
+  .header_menu .sp_gnav .sp_menu_btn span:nth-of-type(2) {
+    top: 20px;
+  }
+  .header_menu .sp_gnav .sp_menu_btn .word {
+    position: absolute;
+    top: 26px;
+    width: fit-content;
+    font-size: 1rem;
+    color: #006888;
+    letter-spacing: 0.12em;
+  }
+  .header_menu .sp_gnav .sp_menu_btn .word::before {
+    content: "MENU";
+  }
+  .header_menu .sp_gnav .sp_menu_btn.is_active span:nth-of-type(1) {
+    top: 11px;
+    left: 10px;
+    transform: translateY(6px) rotate(-20deg);
+  }
+  .header_menu .sp_gnav .sp_menu_btn.is_active span:nth-of-type(2) {
+    top: 23px;
+    left: 10px;
+    transform: translateY(-6px) rotate(20deg);
+  }
+  .header_menu .sp_gnav .sp_menu_btn.is_active .word {
+    letter-spacing: 0.08em;
+  }
+  .header_menu .sp_gnav .sp_menu_btn.is_active .word::before {
+    content: "CLOSE";
+  }
+}
+
+/*============================
+footer
+============================*/
+footer {
+  background-color: #333;
+  color: #fff;
+}
+footer .wrapper {
+  background-color: transparent;
+  padding: 80px 60px 30px;
+}
+@media screen and (max-width: 768px) {
+  footer .wrapper {
+    padding: 80px 7.5% 30px;
+  }
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 1200px) {
+  footer .container {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+footer .logo {
+  width: 216px;
+}
+@media screen and (max-width: 768px) {
+  footer .logo {
+    margin-bottom: 50px;
+  }
+}
+footer .logo-menu {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  footer .logo-menu {
+    display: flex;
+  }
+}
+footer .sns {
+  margin-top: 30px;
+  display: flex;
+}
+footer .sns li {
+  margin-right: 10px;
+}
+footer .sns li:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  footer .sns li {
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 475px) {
+  footer .sns li {
+    margin-left: 20px;
+  }
+}
+footer .sns_img {
+  width: 40px;
+}
+
+.footer_menu {
+  display: flex;
+}
+@media screen and (max-width: 1000px) {
+  .footer_menu {
+    flex-direction: column;
+  }
+}
+.footer_menu .footer_nav_wrap {
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .footer_menu .footer_nav_wrap {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .footer_nav_wrap {
+    margin-bottom: 60px;
+  }
+}
+.footer_menu .footer_nav {
+  font-size: 1.5rem;
+  color: #3386a0; /* リンク先がない間の対応 */
+  margin-right: 40px;
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .footer_nav {
+    font-family: "Kiwi Maru", serif;
+    margin: 0;
+  }
+}
+.footer_menu .footer_nav li {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .footer_nav li {
+    border-top: 1px solid #ccc;
+    position: relative;
+    height: 60px; /* リンク先がない間の対応 */
+    color: #bbb; /* リンク先がない間の対応 */
+    display: flex; /* リンク先がない間の対応 */
+    align-items: center; /* リンク先がない間の対応 */
+    margin: 0;
+  }
+  .footer_menu .footer_nav li:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+}
+.footer_menu .footer_nav a {
+  color: #fff;
+  border-bottom: 1px solid #006888;
+}
+.footer_menu .footer_nav a:hover {
+  opacity: 1;
+  border-bottom: 1px solid #fff;
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .btn_group {
+    text-align: center;
+    margin: 0;
+  }
+}
+.footer_menu .btn_group a {
+  font-size: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .btn_group a {
+    width: calc(50% - 20px);
+    height: 50px;
+    max-width: 150px;
+    font-size: 1.5rem;
+    margin: 5px;
+    border-radius: 30px;
+  }
+}
+.footer_menu .btn_group a:first-child {
+  margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .footer_menu .btn_group a:first-child {
+    margin-right: 5px;
+  }
+}
+
+.copyright {
+  font-size: 15px;
+}
+
+/*============================
+ハンバーガーメニュー
+============================*/
+.sp-menu {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sp-menu {
+    display: block;
+  }
+}
+.sp-menu span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 13px;
+  height: 2px;
+  background-color: #666;
+}
+.sp-menu span:nth-of-type(1) {
+  top: 16px;
+  width: 50%;
+}
+.sp-menu span:nth-of-type(2) {
+  top: 24px;
+  width: 50%;
+}
+.sp-menu.is_active span:nth-of-type(1) {
+  top: 13px;
+  left: 16px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 35%;
+}
+.sp-menu.is_active span:nth-of-type(2) {
+  top: 25px;
+  left: 16px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 35%;
+}
+.sp-menu_text {
+  font-size: 1rem;
+  position: absolute;
+  top: 26px;
+  left: 12px;
+}
+
+/*============================
+dialog
+============================*/
+.dialog {
+  background-color: transparent;
+}
+.dialog:modal {
+  background-color: none;
+  border: none;
+  padding: 0;
+}
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+.dialog_close {
+  position: relative;
+  width: 100%;
+}
+.dialog_close::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 18px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+.dialog_close::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 18px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+.dialog_link:hover {
+  transition-property: initial;
+  opacity: 1;
+}
+.dialog_link_box {
+  max-width: 300px;
+  border: 10px solid #006888;
+  background-color: #fff;
+}
+.dialog_link_box_content {
+  padding: 20px 10px;
+  font-family: "Kiwi Maru", serif;
+  color: #006888;
+}
+.dialog_link_box_content p {
+  line-height: 35px;
+}
+.dialog_link_box img {
+  width: 100%;
+}
+/*# sourceMappingURL=maps/common.css.map */

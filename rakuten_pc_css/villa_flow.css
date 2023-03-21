@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+
+
+.main_wrapper {
+  padding: 50px 0 150px 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .main_wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main_wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .main_wrapper {
+    padding: 32px 0 75px 0;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.step_section {
+  border-bottom: 1px solid #DADADA;
+  border-top: 1px solid #DADADA;
+  max-width: 840px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.step_section img {
+  position: absolute;
+  content: "";
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 19px;
+}
+
+.step_section:first-of-type {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 475px) {
+  .step_section:first-of-type {
+    margin-top: 30px;
+  }
+}
+
+.step_section:nth-of-type(n+2):nth-of-type(-n+4) {
+  margin-top: 19px;
+  border-top: none;
+}
+
+.step_section:last-of-type {
+  border-bottom: none;
+}
+
+.step_box {
+  padding: 50px 0;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .step_box {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .step_box {
+    padding: 30px 0;
+  }
+}
+
+.step_section:last-of-type .step_box {
+  padding-bottom: 0;
+}
+
+.step_num {
+  width: 80px;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #006888;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .step_num {
+    min-width: 57px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .step_num {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .step_num {
+    font-size: 3.8rem;
+  }
+}
+
+.step_num span {
+  font-size: 2rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 475px) {
+  .step_num span {
+    font-size: 1.5rem;
+  }
+}
+
+.step_discription {
+  max-width: 720px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .step_discription {
+    width: 87.48%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .step_discription {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .step_discription {
+    margin-top: 30px;
+  }
+}
+
+.step_title {
+  font-size: 2.4rem;
+  color: #006888;
+  line-height: 1;
+
+}
+
+@media screen and (max-width: 475px) {
+  .step_title {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+}
+
+.step_text {
+  margin-top: 30px;
+  line-height: 2;
+}
+
+@media screen and (max-width: 475px) {
+  .step_text {
+    font-size: 1.3rem;
+    line-height: 1.769;
+    margin-top: 20px;
+  }
+}

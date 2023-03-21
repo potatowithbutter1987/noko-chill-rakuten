@@ -1,0 +1,435 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  /*スムーススクロール対応*/
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 90px;
+  /* overflow-x: hidden; */
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: auto;
+  }
+}
+body {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.6;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  word-break: break-all;
+  font-weight: 400;
+}
+
+
+/*============================
+汎用スタイル
+============================*/
+a,
+input[type=submit],
+.btn,
+button {
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  opacity: 1;
+}
+@media (hover: hover) {
+  a:hover,
+input[type=submit]:hover,
+.btn:hover,
+button:hover {
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+
+/* ボタン */
+.btn_green {
+  color: #fff;
+  background-color: #006888;
+}
+
+
+
+/* フォント */
+.title {
+  color: #006888;
+}
+
+
+/*============================
+汎用レイアウト・汎用パーツ
+============================*/
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/*============================
+header
+============================*/
+header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+header.villa-header {
+  height: 70px;
+  padding: 0;
+}
+
+.header_inner {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DADADA;
+}
+
+.villa-logo {
+  width: 143px;
+}
+
+.villa-header_menu .pc_menu {
+  display: flex;
+}
+
+.villa-header_menu .gnav {
+  display: flex;
+  align-items: center;
+}
+
+.villa-header_menu .gnav a {
+  color: #006888;
+  margin: 0 13px;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+}
+
+.villa-header_menu .gnav a:hover,
+.villa-header_menu .gnav a.current {
+  opacity: 1;
+  font-family: "Noto Serif JP", serif;
+  border-bottom: 1px solid #006888;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.ml-7 {
+  margin-left: 7px;
+}
+
+.villa-header .btn_group a {
+  width: 120px;
+  height: 70px;
+  font-size: 1.6rem;
+  background: #83994D;
+  color: #fff;
+  display: inline-block;
+  padding: 1.2em 20px;
+  line-height: 2;
+}
+.villa-header .btn_group a:hover{
+  text-decoration: none;
+}
+
+/* //header */
+
+
+/* スクロールダウン */
+.scrolldown.villa {
+  position: relative;
+  height: 30px;
+  margin: 20px 0 30px;
+}
+
+
+.scrolldown.villa::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 30px;
+  background: #006888;
+}
+
+/* //スクロールダウン */
+
+
+/*============================
+下層ページ共通
+============================*/
+.sub_wrapper {
+  width: 100%;
+}
+
+
+/* パンくず */
+.breadcrumb {
+  background: #f1f1f1;
+  height: 50px;
+  padding-left: 28px;
+  padding-top: 16px;
+  padding-bottom: 1px;
+  font-size: 1.4rem;
+}
+
+.breadcrumb_list {
+  display: flex;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.breadcrumb_item.current {
+  margin-left: 12px;
+  position: relative;
+  color: #333;
+  font-family: "Noto Serif JP", serif;
+  font-weight: normal;
+}
+
+.breadcrumb_item.current::before {
+  content: "/";
+  position: absolute;
+  left: -8px;
+  top: 0;
+}
+.breadcrumb_item a{
+  color: #333;
+}
+.breadcrumb_item a:hover{
+  text-decoration: none;
+}
+
+/* //パンくず */
+
+/* 下層ページタイトル */
+.page_header .title {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  font-family: "Noto Serif JP", serif;
+}
+
+.page_header .title .string {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  font-size: 3.6rem;
+  font-family: "Noto Serif JP", serif;
+  letter-spacing: 0.025em;
+}
+
+/* //下層ページタイトル */
+
+/* ページタイトルテキスト */
+.page_text {
+  text-align: center;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+}
+
+
+/* //ページタイトルテキスト */
+
+/*============================
+//下層ページ共通　ここまで
+============================*/
+
+/*============================
+footer
+============================*/
+footer {
+  background-color: #333;
+  color: #fff;
+}
+footer .wrapper {
+  background-color: transparent;
+}
+
+
+/* ボタン */
+.footer_mask {
+  height: 75px;
+  width: 100%;
+  background: #fff;
+}
+
+.footer_btn_group {
+  margin-top: -75px;
+ padding: 0 50px;
+}
+
+.btn_grid {
+  background: #006888;
+  padding: 40px;
+}
+
+.footer_btn_group a {
+  padding: 15px 24px;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: auto;
+  background: #83994D;
+  color: #fff;
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.footer_btn_group a:hover{
+  text-decoration: none;
+}
+
+
+.footer_btn_group .btn_inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.footer_btn_group a span {
+  display: inline-block;
+}
+
+.footer_btn_group a span:nth-of-type(2) {
+  position: relative;
+  margin-left: 10px;
+  height: 16px;
+  width: 22px;
+}
+
+.footer_btn_group a span:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: #fff;
+}
+
+.footer_btn_group a span:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+
+.wrapper.footer {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-top: 50px;
+}
+
+.wrapper.footer .container {
+  padding: 0 50px;
+  display: block;
+  margin-bottom: 60px;
+}
+
+.wrapper.footer .logo {
+  width: 120px;
+}
+
+.wrapper.footer .logo-menu {
+  display: block;
+}
+
+address {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+address dl {
+  display: flex;
+}
+
+address dd {
+  margin-left: 15px;
+}
+address dd a.tel{
+  color: #fff;
+}
+address dd a.tel:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.villa_footer_menu {
+  margin-top: 50px;
+  font-size: 1.4rem;
+}
+
+.villa_footer_menu .footer_nav {
+  display: flex;
+}
+
+.villa_footer_menu .footer_nav a{
+  color: #fff;
+}
+.villa_footer_menu .footer_nav a:hover {
+  opacity: 1;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+}
+.footer_nav li:nth-of-type(n+2){
+  margin-left: 30px;
+}
+
+.hr.footer {
+  padding: 0 50px;
+  margin-top: 50px;
+  background: none;
+}
+
+.hr.footer span {
+  display: block;
+  width: 100%;
+  background: #444;
+  height: 1px;
+}
+
+small {
+  font-size: 1.3rem;
+  margin-top: 30px;
+  display: inline-block;
+  padding: 0 50px;
+}
+
+
+/*============================
+//　footer　ここまで
+============================*/
+

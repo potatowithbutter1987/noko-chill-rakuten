@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+
+
+.main_wrapper {
+  padding: 50px 0 120px 0;
+}
+
+.page_menu-box {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.page_menu-top ul {
+  display: flex;
+  justify-content: center;
+}
+
+.page_menu-top li:not(:first-of-type) {
+  margin-left: 40px;
+}
+
+.page_menu-box a {
+  width: 280px;
+  height: 60px;
+  display: inline-block;
+  padding: 13px;
+  letter-spacing: 0.03em;
+  position: relative;
+  line-height: 2;
+}
+
+.page_menu-box li:nth-of-type(3) a {
+  line-height: 1.1;
+}
+
+.page_menu-box li:nth-of-type(3) br {
+  letter-spacing: 0;
+}
+
+.page_menu-box a::after {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  right: 18px;
+  transform: translate(-50%) rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  width: 10px;
+  height: 10px;
+}
+
+.page_menu-top a {
+  background: #006888;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.page_menu-top a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+section {
+  margin-top: 50px;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+section#flower {
+  margin-top: 0;
+}
+
+section#food {
+  padding: 0 50px;
+  margin-top: 0;
+}
+
+section#pet {
+  margin-top: 0;
+}
+
+.bg_blue1 {
+  background: #e5f0f3;
+  width: 100%;
+  position: relative;
+}
+
+.bg_mask_top img {
+  margin-top: -2px;
+  width: 100%;
+  height: auto;
+}
+
+.bg_mask_bottom img {
+  width: 101%;
+  height: auto;
+  margin-left: -1px;
+}
+
+.room_content_box {
+  max-width: 1280px;
+  padding: 0px 40px 60px 40px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.room_content_title {
+  margin-top: 50px;
+  font-size: 3.6rem;
+  letter-spacing: 0.03em;
+  color: #006888;
+}
+
+.flower_title {
+  text-align: right;
+}
+
+#flower .room_content_title {
+  margin-left: auto;
+  width: 400px;
+  text-align: left;
+}
+
+#pet .room_content_title {
+  display: block;
+}
+
+.room_name {
+  font-size: 2.6rem;
+  letter-spacing: 0.03em;
+  color: #006888;
+  display: inline-block;
+}
+
+.addition {
+  display: inline-block;
+  background: #f5eb5a;
+  margin-left: 20px;
+  padding: 8px 20px;
+  color: #006888;
+  line-height: 1.2;
+}
+
+.addition img {
+  margin-right: 6px;
+}
+
+.room_content {
+  margin-top: -50px;
+  display: flex;
+}
+
+#flower .room_content {
+  flex-direction: row-reverse;
+}
+
+#pet .room_content {
+  margin-top: -95px;
+}
+
+.room_discription {
+  margin-top: 70px;
+  width: 400px;
+}
+
+#flower .room_discription {
+  margin-left: 35px;
+}
+
+#pet .room_discription {
+  margin-top: 125px;
+}
+
+.room_content dt {
+  color: #006888;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+}
+
+.room_gallery {
+  width: 435px;
+  margin-left: 35px;
+}
+
+#flower .room_gallery {
+  margin-left: 0px;
+}
+
+.room_search_btn {
+  margin-top: 60px;
+}
+
+.room_search_btn a {
+  color: #fff;
+  height: 120px;
+  display: inline-block;
+  background: #83994D;
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.room_search_btn a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.room_search_btn a span {
+  display: inline-block;
+}
+
+.room_search_btn a span:nth-of-type(2) {
+  position: relative;
+  margin-left: 10px;
+  height: 16px;
+  width: 22px;
+}
+
+.room_search_btn a span:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: #fff;
+}
+
+.room_search_btn a span:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+
+.room_content_title.bottom {
+  text-align: center;
+}
+
+.room_content_bottom {
+  width: 840px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.food_content {
+  border: 1px solid #DADADA;
+  padding: 40px;
+  width: 100%;
+}
+
+.food_content:last-of-type {
+  margin-top: 70px;
+}
+
+.food_title {
+  font-size: 2.8rem;
+  color: #006888;
+}
+
+.food_inner {
+  margin-top: 20px;
+  border-top: 1px solid #DADADA;
+}
+
+.food_text {
+  margin-top: 30px;
+  text-align: justify;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+}
+
+.food_kind_title {
+  font-size: 2.4rem;
+  color: #006888;
+}
+
+.food_img_box {
+  margin-top: 30px;
+}
+
+.food_img_box ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.food_img_box ul li {
+  width: calc((100% - 40px) / 2);
+}
+
+.food_img {
+  margin-top: 20px;
+}
+
+.food_img img {
+  width: 100%;
+  height: auto;
+}
+
+.food_price_head {
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+  margin-top: 25px;
+}
+
+.food_price_head span {
+  font-size: 1.6rem;
+}
+
+.food_kind_text {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  line-height: 2;
+  text-align: justify;
+}
+
+.upperplan_box {
+  margin-top: 40px;
+  background: #e5f0f3;
+  padding: 40px;
+}
+
+.upperplan_title {
+  font-size: 2.4rem;
+  color: #006888;
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.upperplan_contet_box {
+  margin-top: 30px;
+}
+
+.upperplan_contet_box ul li {
+  display: flex;
+}
+
+.upperplan_contet_box ul li:first-of-type {
+  padding-bottom: 40px;
+}
+
+.upperplan_contet_box ul li:last-of-type {
+  padding-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.upperplan_img {
+  width: calc((100% - 40px) / 2);
+}
+
+.upperplan_img img {
+  width: 100%;
+  height: auto;
+}
+
+.upperplan_text_box {
+  width: calc((100% - 40px) / 2);
+  margin-left: 40px;
+}
+
+.upperplan_text_box .food_price_head {
+  margin-top: 0;
+  line-height: 1;
+}
+
+.upperplan_text_title {
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+}
+
+.upperplan_text {
+  font-size: 1.4rem;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.food_kind_title.bf {
+  font-size: 1.6rem;
+  color: #333;
+  margin-top: 12px;
+}
+
+.food_img_box.bf p {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  letter-spacing: 0.03em;
+}
+
+.food_img_box.bf .food_img {
+  margin-top: 0;
+}
+
+.room_content_bottom:last-of-type {
+  margin-top: 0px;
+}
+
+.room_img li:nth-of-type(n+2) {
+  margin-top: 10px;
+}
+
+.room_img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

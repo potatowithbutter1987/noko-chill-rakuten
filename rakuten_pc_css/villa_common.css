@@ -262,9 +262,13 @@ header.villa-header {
 /*============================
 footer
 ============================*/
-footer {
+/* footer {
   background-color: #333;
   color: #fff;
+} */
+footer {
+  color: #fff;
+  position: relative;
 }
 footer .wrapper {
   background-color: transparent;
@@ -272,15 +276,24 @@ footer .wrapper {
 
 
 /* ボタン */
-.footer_mask {
+/* .footer_mask {
   height: 75px;
   width: 100%;
   background: #fff;
+} */
+.footer_mask {
+margin-top: 105px;
 }
 
+/* .footer_btn_group {
+  margin-top: -75px;
+ padding: 0 50px;
+} */
 .footer_btn_group {
   margin-top: -75px;
  padding: 0 50px;
+ position: absolute;
+ width: 100%;
 }
 
 .btn_grid {
@@ -379,6 +392,9 @@ address dl {
 }
 
 address dd {
+  margin-left: 25px;
+}
+address dl:last-of-type dd{
   margin-left: 15px;
 }
 address dd a.tel{
@@ -387,6 +403,11 @@ address dd a.tel{
 address dd a.tel:hover{
   color: #fff;
   text-decoration: none;
+}
+/* safariでfax番号を自動変換を無効 */
+address dd a[href^="tel:"]{
+  text-decoration: none;
+  color: #fff;
 }
 .villa_footer_menu {
   margin-top: 50px;

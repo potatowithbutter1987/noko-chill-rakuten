@@ -291,10 +291,8 @@ main {
 }
 
 .room_overview_img img {
-  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .room_img_list {

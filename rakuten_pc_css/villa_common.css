@@ -365,7 +365,8 @@ margin-top: 105px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 30px;
-  padding-top: 50px;
+  padding-top: 150px;
+  background: #333;
 }
 
 .wrapper.footer .container {

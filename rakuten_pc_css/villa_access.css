@@ -39,7 +39,11 @@
   text-align: center;
   margin: 0 auto;
 }
-
+/* safariでfax番号を自動変換を無効 */
+.villa_map_address address dd a[href^="tel:"]{
+  text-decoration: none;
+  color: #333;
+}
 .access_howto {
   margin-top: 80px;
   padding: 0 50px;
